@@ -1,0 +1,35 @@
+markdown:         redcarpet
+pygments:         true
+paginate:         4
+
+title:            Ryan Cheng
+url:              http://cr1944.github.io
+feed:             /atom.xml
+author:
+    name:         PIZn
+    email:        pizner@gmail.com
+    description:  "The one theme is another web theme design by PIZn."
+
+about:            "I am PIZn.I love all kinds of design, attention to the Internet dynamic, dedicated web front development, learn UI and UED."
+follow:
+    email:        ryancheng1944@gmail.com
+    github:       https://github.com/cr1944
+    twitter:      http://www.twitter.com/piznlin
+    google:       https://plus.google.com/114474183775310756510
+    facebook:     http://facebook.com/zhanxinlin
+description:      Android developer,this is my blog.
+
+indexContent:     false
+imageLink:        http://cr1944.github.io/avatar.jpg
+
+
+style:            /css/style.css
+blogName:         ryancheng'blog
+blogDesc:         ryancheng'blog
+favicon:          /favicon.ico
+theme:            default
+
+disqus:           piznblog
+
+copyright:        Copyright © 2011-2012 PIZn All rights reserved.
+test:             ok
