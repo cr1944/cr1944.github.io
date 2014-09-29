@@ -1,8 +1,6 @@
 ---
 layout: post
 title: 创建自定义View(4)
-description: Android framework提供大量的控件，用于交互和各种数据的显示。但是有时候你的应用会有一些独特的需求，内置的控件无法满足。本节将会告诉你如何自己去创建一个强健的，可重用的控件。
-keyword: android,custom view,UI
 ---
 
 #优化控件#

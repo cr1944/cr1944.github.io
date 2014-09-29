@@ -1,35 +1,24 @@
-markdown:         rdiscount
+# Dependencies
+markdown:         redcarpet
 pygments:         true
-paginate:         4
 
+# Permalinks
+permalink:        pretty
+
+# Setup
 title:            Ryan Cheng
-url:              http://cr1944.github.io
-feed:             /atom.xml
+tagline:          'Tech & Life'
+description:      'Hello,World!'
+url:              https://cr1944.github.io
+
 author:
-    name:         PIZn
-    email:        pizner@gmail.com
-    description:  "The one theme is another web theme design by PIZn."
+  name:           'ShellDone'
+  url:            http://weibo.com/shelldone
 
-about:            "I am PIZn.I love all kinds of design, attention to the Internet dynamic, dedicated web front development, learn UI and UED."
-follow:
-    email:        ryancheng1944@gmail.com
-    github:       https://github.com/cr1944
-    twitter:      http://www.twitter.com/piznlin
-    google:       https://plus.google.com/114474183775310756510
-    facebook:     http://facebook.com/zhanxinlin
-description:      Android developer,this is my blog.
+paginate:         5
 
-indexContent:     false
-imageLink:        http://cr1944.github.io/avatar.jpg
+# Custom vars
+version:          1.0.0
 
-
-style:            /css/style.css
-blogName:         Ryan Cheng
-blogDesc:         ryancheng'blog
-favicon:          /favicon.ico
-theme:            default
-
-disqus:           piznblog
-
-copyright:        Copyright © 2011-2012 PIZn All rights reserved.
-test:             ok
+#github:
+#  repo:           https://github.com/poole/lanyon
