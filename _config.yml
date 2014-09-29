@@ -1,4 +1,4 @@
-markdown:         redcarpet
+markdown:         rdiscount
 pygments:         true
 paginate:         4
 
@@ -24,7 +24,7 @@ imageLink:        http://cr1944.github.io/avatar.jpg
 
 
 style:            /css/style.css
-blogName:         ryancheng'blog
+blogName:         Ryan Cheng
 blogDesc:         ryancheng'blog
 favicon:          /favicon.ico
 theme:            default
