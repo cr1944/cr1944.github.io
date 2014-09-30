@@ -1,8 +1,8 @@
 # Dependencies
 markdown:         redcarpet
 pygments:         true
-gems:
-  - jekyll-sitemap
+#gems:
+#  - jekyll-sitemap
 # Permalinks
 permalink:        pretty
 
