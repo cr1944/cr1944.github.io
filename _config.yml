@@ -1,7 +1,8 @@
 # Dependencies
 markdown:         redcarpet
 pygments:         true
-
+gems:
+  - jekyll-sitemap
 # Permalinks
 permalink:        pretty
 
@@ -10,10 +11,10 @@ title:            Ryan Cheng
 tagline:          'Tech & Life'
 description:      'Hello,World!'
 url:              https://cr1944.github.io
-
+domain:            ShellDone.Com
 author:
-  name:           'ShellDone'
-  url:            http://weibo.com/shelldone
+  name:           'Ryancheng'
+  url:            https://github.com/cr1944
 
 paginate:         5
 
@@ -21,4 +22,4 @@ paginate:         5
 version:          1.0.0
 
 #github:
-#  repo:           https://github.com/poole/lanyon
+#  repo:           https://github.com/shelldonegao/blog
