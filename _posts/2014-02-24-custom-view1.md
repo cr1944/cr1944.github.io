@@ -32,10 +32,10 @@ class PieChart extends View {
 
 ###定义客制化Attributes###
 把一个内置的控件加到你的用户界面中，你可以在XML文件中加入对应的元素，并且通过元素属性去控制它的表现。一个写得很好的自定义控件也可以通过XML去添加和设计。你需要做的是：
-> * 在`<declare-styleable>`资源中定义`attributes`
-> * 在XML布局中指定`attributes`的值
-> * 运行时获取指定的`attribute`的值
-> * 把获取的`attribute`的值应用到你的控件上
+* 在`<declare-styleable>`资源中定义`attributes`
+* 在XML布局中指定`attributes`的值
+* 运行时获取指定的`attribute`的值
+* 把获取的`attribute`的值应用到你的控件上
 
 本节将探讨如何定义`attributes`并指定它们的值。下节将探讨如何在运行时获取和使用它们。
 
@@ -71,8 +71,8 @@ xmlns:custom="http://schemas.android.com/apk/res/com.example.customviews">
 
 ###应用客制化Attributes###
 若一个控件是从XML布局中创建的，所有XML标签中的`attributes`都是从资源bundle中读取并以`AttributeSet`传递到控件的构造方法中。尽管可以直接从`AttributeSet`中读取值，但是这种做法有些缺点：
-> - `attribute`的值中的资源引用无法处理
-> - `Styles`无法应用
+- `attribute`的值中的资源引用无法处理
+- `Styles`无法应用
 
 正确的做法是，把`AttributeSet`传递到`obtainStyledAttributes()`中，该方法返回一个 `TypedArray`。
 
@@ -107,8 +107,8 @@ public void setShowText(boolean showText) {
 
 ###Design For Accessibility###
 你的自定义控件应该考虑各种各样的用户。其中包括无法看见或者正常使用触摸屏的残障人士。为了支持这些残障人士，你应该：
-> - 使用android:contentDescription属性给你的输入框添加标签
-> - 在适当的时机通过`sendAccessibilityEvent()`发送`accessibility`事件
-> - 支持备用控制器，如方向键和轨迹球
+- 使用android:contentDescription属性给你的输入框添加标签
+- 在适当的时机通过`sendAccessibilityEvent()`发送`accessibility`事件
+- 支持备用控制器，如方向键和轨迹球
 
 （未完待续）
