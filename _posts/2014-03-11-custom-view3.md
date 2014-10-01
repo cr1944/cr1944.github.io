@@ -7,7 +7,7 @@ title: 创建自定义View(3)
 
 <!--more-->
 
-###Handle Input Gestures###
+###处理输入手势###
 跟其他UI框架一样，Android也有一套输入事件模型。用户的行为被转化成事件，并触发一些回调方法，你可以重写这些回调方法，来对用户的行为作出自定义的响应。Android系统最常见的事件是touch事件，它会触发`onTouchEvent(android.view.MotionEvent)`。重写这个方法来处理事件：
 
 ```java
@@ -55,10 +55,11 @@ public boolean onTouchEvent(MotionEvent event) {
 ```java
 @Override
 public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-    mScroller.fling(currentX, currentY, velocityX / SCALE, velocityY / SCALE, minX, minY, maxX, maxY); postInvalidate(); }
+    mScroller.fling(currentX, currentY, velocityX / SCALE, velocityY / SCALE, minX, minY, maxX, maxY); postInvalidate();
+}
 ```
 
->注意：`GestureDetector`计算出的速率是物理精度的，许多开发者表示使用这个值的飞行动画太快了，通常的做法是把x，y方向的速率除以一个4到8因子。 调用`fling()`设置了飞行手势的物理模型，然后，你需要定期调用`Scroller.computeScrollOffset()`来更新`Scroller`。`computeScrollOffset()`通过读取当前时间并且使用物理模型获取该时间的x，y方向坐标值来更新`Scroller`的内部状态。调用`getCurrX()`和`getCurrY()`来获取这些值。大多数控件直接把`Scroller`对象的x，y值直接传递给`scrollTo()`方法。PieChart例子有些不同：它使用当前卷动的y值来设置图表的旋转角度。
+>**注意**`GestureDetector`计算出的速率是物理精度的，许多开发者表示使用这个值的飞行动画太快了，通常的做法是把x，y方向的速率除以一个4到8因子。 调用`fling()`设置了飞行手势的物理模型，然后，你需要定期调用`Scroller.computeScrollOffset()`来更新`Scroller`。`computeScrollOffset()`通过读取当前时间并且使用物理模型获取该时间的x，y方向坐标值来更新`Scroller`的内部状态。调用`getCurrX()`和`getCurrY()`来获取这些值。大多数控件直接把`Scroller`对象的x，y值直接传递给`scrollTo()`方法。PieChart例子有些不同：它使用当前卷动的y值来设置图表的旋转角度。
 
 ```java
 if (!mScroller.isFinished()) {
@@ -68,10 +69,10 @@ if (!mScroller.isFinished()) {
 ```
 
 `Scroller`类为你计算滚动位置，但是它不会自动把这些位置作用到你的控件上。你的职责是要足够频繁地去获取和作用新的坐标位置，来使卷动动画看起来平滑。有两种方法：
->- 调用`fling()`之后调用`postInvalidate()`来强制重绘。这种方式要求你在`onDraw()`中计算卷动偏移量，并且在每次卷动偏移量改变时都调用`postInvalidate()`。
->- 设置一个`ValueAnimator`来对飞行时间进行动画处理，然后 通过调用`addUpdateListener()`添加一个listener来处理动画状态改变。 PieChart例子使用第二种处理。这种方式设置起来稍微复杂点，但是它运作起来更加接近动画系统，并且不需要潜在的不重要的view invalidate处理。缺点是API等级11前不支持`ValueAnimator`，所以这项技巧不能用于Android3.0前的设备。
+- 调用`fling()`之后调用`postInvalidate()`来强制重绘。这种方式要求你在`onDraw()`中计算卷动偏移量，并且在每次卷动偏移量改变时都调用`postInvalidate()`。
+- 设置一个`ValueAnimator`来对飞行时间进行动画处理，然后 通过调用`addUpdateListener()`添加一个listener来处理动画状态改变。 PieChart例子使用第二种处理。这种方式设置起来稍微复杂点，但是它运作起来更加接近动画系统，并且不需要潜在的不重要的view invalidate处理。缺点是API等级11前不支持`ValueAnimator`，所以这项技巧不能用于Android3.0前的设备。
 
->注意：`ValueAnimator`在API等级11前不支持，但是你仍然可以在应用中使用它。你只需要保证在运行时检查API等级，如果低于11，忽略掉调用即可。
+>**注意**`ValueAnimator`在API等级11前不支持，但是你仍然可以在应用中使用它。你只需要保证在运行时检查API等级，如果低于11，忽略掉调用即可。
 
 ```java
 mScroller = new Scroller(getContext(), null, true);
