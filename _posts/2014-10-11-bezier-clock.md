@@ -1,8 +1,11 @@
-# 自定义控件：贝赛尔时钟（bezier-clock）
-
+---
+layout: post
+title: 自定义控件：贝赛尔时钟（bezier-clock）
 ---
 
 之前看到一个js实现的贝赛尔时钟效果[bezier-clock][1]，觉得不错，就想用java实现移植到android上，于是就有了这篇博文。
+
+<!--more-->
 
 ##贝赛尔曲线##
 
