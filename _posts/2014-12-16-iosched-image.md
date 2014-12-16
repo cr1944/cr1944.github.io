@@ -1,3 +1,10 @@
+---
+layout: post
+title: 翻译：Google IO 图片加载策略
+---
+最小化数据传输对一个移动app来说是一个重要的要求，尤其是在一个网络请求受限制的环境，如一个安排满满的大会。但是，另一方面，丰富的 session 和 speaker 图片可以使如IOSched这样的 app 更易操作也更加美观，甚至可以帮助参会者识别speakers。
+
+<!--more-->
     Copyright 2014 Google Inc. All rights reserved.
 
     Licensed under the Apache License, Version 2.0 (the "License");
